@@ -1,0 +1,85 @@
+# PteroStats config
+# If you need help, join our discord server here: https://discord.gg/zNVJqYdNXw
+
+# Bot Configuration
+token: ''
+presence:
+    text: 'Hosting Panel'
+    type: 'watching' # can be 'watching', 'playing', 'listening', or 'competing'. for 'streaming' is not working for now
+    status: 'online' # can be 'online', 'idle', 'dnd', or 'invisible'
+
+# Discord Channel and Refresh Time Configuration
+channel: ''
+refresh: 60 # How much time the bot will refresh the stats
+timeout: 1 # How much time to wait some node to respond to the bot (if you change this, it will add more time to refresh the stats)
+
+# Panel Configuration
+panel:
+    url: ''
+    key: ''
+
+# Message and Embed Configuration
+# leave '' if you want to disable option
+message:
+    content: ''
+    attachment: '' # If you enable attachment on message it upload the attachment first before sending or editing message and it will delay the stats
+
+embed:
+    title: 'PteroStats'
+    color: '5865F2'
+    description: 'Next update {{time}}' # You can use {{time}} to make "in X seconds" time format
+    footer: ''
+    timestamp: true
+    thumbnail: ''
+    image: ''
+    field:
+        title: ''
+        description: '' # You can use {{time}} to make "in X seconds" time format
+
+# Message Button Configuration
+button:
+    enable: true
+    btn1:
+        label: 'Panel'
+        url: ''
+    btn2:
+        label: ''
+        url: ''
+    btn3:
+        label: ''
+        url: ''
+    btn4:
+        label: ''
+        url: ''
+    btn5:
+        label: ''
+        url: ''
+
+# Status Message Configuration
+status:
+    online: ':green_circle: Online'
+    offline: ':red_circle: Offline'
+
+# Nodes Settings
+nodes_settings:
+    blacklist: [] # You can add node id to remove the node from status embed (Example: "blacklist: [1]")
+    details: false # enable nodes details like memory and disk
+    servers: true
+    location: true
+    allocations: true
+    unit: 'gb' # You can use "gb", "mb", "tb", or "percent"
+
+# Panel Users and Servers Settings
+panel_settings:
+    status: true # enable panel stats under nodes stats
+    servers: true
+    users: true
+
+# Mentions a User or Role if some nodes are offline (this feature is still in testing, please report if you have a problem)
+mentions: # to enable atleast put 1 ID on user or role bellow
+    user: [] # Put User ID here (Example: "user: ['userid1', 'userid2']")
+    role: [] # Put Role ID here (Example: "role: ['roleid1', 'roleid2']")
+    channel: '' # Put Channel ID here for the logging
+
+# Log error to console if server offline (enable this if you have a problem that you wanted to report)
+log_error: false # set to "true" to enable
